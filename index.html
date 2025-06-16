@@ -9,6 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Directly call lucide.createIcons() after the library import to ensure icons load early
+        // This is a common pattern to resolve rendering issues, even if DOMContentLoaded is also used
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -518,9 +525,7 @@
             </svg>
         </div>
 
-        <div class="w-full text-center text-gray-400 text-sm mt-8">
-            <p>A continuación, encontrará los perfiles detallados del equipo:</p>
-        </div>
+        <!-- The removed phrase was here -->
 
         <!-- Detailed Card Sections - New Layout -->
         <div class="main-sections-grid">
