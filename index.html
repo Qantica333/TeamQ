@@ -7,6 +7,8 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -139,7 +141,7 @@
         .node-agustina { fill: #10b981; stroke: #047857; } /* Emerald green */
         .node-paola { fill: #047857; stroke: #065f46; } /* Darker emerald for Paola */
         .node-maxi, .node-yadira { fill: #f59e0b; stroke: #d97706; } /* Amber */
-        .node-agente-ventas { fill: #ec4899; stroke: #be185d; } /* Rose */
+        .node-salua { fill: #ec4899; stroke: #be185d; } /* Rose for Salua */
         .node-nico { fill: #84cc16; stroke: #65a30d; } /* Lime */
         .node-daniel { fill: #3b82f6; stroke: #2563eb; } /* Blue */
         .node-ayudante-maxi { fill: #facc15; stroke: #d97706; } /* Yellow */
@@ -158,7 +160,7 @@
         .node-agustina-text { fill: #1a202c; }
         .node-paola-text { fill: #ffffff; } /* White text for dark emerald Paola */
         .node-daniel-text { fill: #ffffff; }
-        .node-maxi-text, .node-yadira-text, .node-nico-text, .node-ayudante-maxi-text { fill: #1a202c; }
+        .node-maxi-text, .node-yadira-text, .node-nico-text, .node-ayudante-maxi-text, .node-salua-text { fill: #1a202c; }
 
 
         .node-subtext {
@@ -174,7 +176,7 @@
         .node-agustina-subtext { fill: #1a202c; }
         .node-paola-subtext { fill: #e2e8f0; } /* text-gray-200 for dark emerald Paola */
         .node-daniel-subtext { fill: #e2e8f0; }
-        .node-maxi-subtext, .node-yadira-subtext, .node-nico-subtext, .node-ayudante-maxi-subtext { fill: #1a202c; }
+        .node-maxi-subtext, .node-yadira-subtext, .node-nico-subtext, .node-ayudante-maxi-subtext, .node-salua-subtext { fill: #1a202c; }
 
 
         .line {
@@ -354,6 +356,19 @@
             border-color: #f87171; /* border-red-400 */
         }
 
+        /* Section Icon Styling */
+        .section-icon {
+            font-size: 3rem; /* Large icon size (Lucide takes care of size with default CSS) */
+            margin-bottom: 1rem;
+            /* Apply dynamic fill color using CSS variable or specific class */
+        }
+        /* Lucide SVG elements generated will inherit color from parent or be styled directly */
+        .section-liderazgo .section-icon svg { color: #2dd4bf; }
+        .section-produccion .section-icon svg { color: #60a5fa; }
+        .section-bitacora .section-icon svg { color: #4ade80; }
+        .section-producto .section-icon svg { color: #f87171; }
+
+
         /* Responsive adjustments for SVG */
         @media (max-width: 767px) {
             .svg-organigram {
@@ -460,11 +475,11 @@
                     <text x="200" y="435" class="node-subtext node-paola-subtext">(Bitácora - Redes)</text>
                 </g>
 
-                <!-- Agente de Ventas - Moved to Nico's level -->
-                <g class="node-group" data-target="card-agente-ventas" data-node-id="agente-ventas">
-                    <circle cx="700" cy="590" r="60" class="node-circle node-agente-ventas"></circle>
-                    <text x="700" y="580" class="node-text node-agente-ventas-text">Agente de Ventas</text>
-                    <text x="700" y="605" class="node-subtext node-agente-ventas-subtext">(Markets y Plataformas)</text>
+                <!-- SALUA (formerly Agente de Ventas) - Moved to Nico's level -->
+                <g class="node-group" data-target="card-salua" data-node-id="salua">
+                    <circle cx="700" cy="590" r="60" class="node-circle node-salua"></circle>
+                    <text x="700" y="580" class="node-text node-salua-text">SALUA</text>
+                    <text x="700" y="605" class="node-subtext node-salua-subtext">(Rep. Guionistas)</text>
                 </g>
 
                 <!-- Fourth Level -->
@@ -476,7 +491,7 @@
                 </g>
 
 
-                <!-- Lines/Arrows - Adjusted for new Agente de Ventas position -->
+                <!-- Lines/Arrows - Adjusted for new Salua position -->
                 <!-- Luciano to Agustina -->
                 <line x1="500" y1="140" x2="200" y2="190" class="line" data-from="luciano" data-to="agustina"></line>
                 <!-- Luciano to Maxi -->
@@ -492,10 +507,10 @@
                 <!-- Maxi to Ayudante Maxi (New Line) -->
                 <line x1="400" y1="310" x2="400" y2="360" class="line" data-from="maxi" data-to="ayudante-maxi"></line>
 
-                <!-- Maxi to Agente de Ventas - adjusted to new position -->
-                <line x1="400" y1="310" x2="700" y2="530" class="line" data-from="maxi" data-to="agente-ventas"></line>
-                <!-- Yadira to Agente de Ventas - adjusted to new position -->
-                <line x1="600" y1="310" x2="700" y2="530" class="line" data-from="yadira" data-to="agente-ventas"></line>
+                <!-- Maxi to SALUA - adjusted to new position -->
+                <line x1="400" y1="310" x2="700" y2="530" class="line" data-from="maxi" data-to="salua"></line>
+                <!-- Yadira to SALUA - adjusted to new position -->
+                <line x1="600" y1="310" x2="700" y2="530" class="line" data-from="yadira" data-to="salua"></line>
 
                 <!-- Paola to Nico (formerly Renata to Nico) -->
                 <line x1="200" y1="480" x2="200" y2="530" class="line" data-from="paola" data-to="nico"></line>
@@ -510,7 +525,10 @@
         <!-- Detailed Card Sections - New Layout -->
         <div class="main-sections-grid">
             <!-- Luciano - Central Figure (Keeping for detailed text) -->
-            <div id="section-luciano" class="section-block section-liderazgo">
+            <div id="section-liderazgo" class="section-block section-liderazgo">
+                <div class="section-icon">
+                    <i data-lucide="crown"></i>
+                </div>
                 <h3 class="section-title">Liderazgo General</h3>
                  <div id="card-luciano" class="card card-luciano">
                     <h2 class="text-lg font-bold">Luciano</h2>
@@ -524,12 +542,15 @@
 
             <!-- Producción Ejecutiva Section -->
             <div id="section-produccion-ejecutiva" class="section-block section-produccion">
+                <div class="section-icon">
+                    <i data-lucide="clapperboard"></i>
+                </div>
                 <h3 class="section-title">Producción Ejecutiva</h3>
                 <div id="card-maxi" class="card">
                     <h4 class="text-lg font-bold text-gray-200">Maxi Dubois</h4>
                     <p class="text-sm role-title">Productor Ejecutivo LATAM</p>
                     <div class="card-description-wrapper">
-                        <p class="text-sm text-left text-gray-200">Con una sólida trayectoria de más de 40 películas, Maxi lidera la producción ejecutiva en América Latina. Su rol es articular la pata productora desde la región, en coordinación directa con Yadira en Europa. Se encarga de vincular al equipo con guionistas estratégicos, alimentar el pipeline de proyectos y acercarlos al área de Perfiles. Maxi también trabaja estrechamente con el Agente de Ventas para validar el potencial comercial de los guiones y con Luciano para ajustar las prioridades productivas según los intereses del mercado.</p>
+                        <p class="text-sm text-left text-gray-200">Con una sólida trayectoria de más de 40 películas, Maxi lidera la producción ejecutiva en América Latina. Su rol es articular la pata productora desde la región, en coordinación directa con Yadira en Europa. Se encarga de vincular al equipo con guionistas estratégicos, alimentar el pipeline de proyectos y acercarlos al área de Perfiles. Maxi también trabaja estrechamente con SALUA para validar el potencial comercial de los guiones y con Luciano para ajustar las prioridades productivas según los intereses del mercado.</p>
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
@@ -545,15 +566,15 @@
                     <h4 class="text-lg font-bold text-gray-200">Yadira Ávalos</h4>
                     <p class="text-sm role-title">Productora Ejecutiva España</p>
                     <div class="card-description-wrapper">
-                        <p class="text-sm text-left text-gray-200">Yadira lidera el brazo europeo de Producción Ejecutiva, aportando una trayectoria con 35 proyectos y premios a nivel internacional. Es la base operativa en España y cuenta con su propia productora, lo que le permite una visión integral de la viabilidad de los proyectos. En constante coordinación con Maxi, su enfoque es atraer perfiles relevantes del mercado español y europeo e integrarlos al ecosistema interno. Su visión productiva se centra en conformar equipos sólidos, impulsar desarrollos que superen el exigente Filtro Q y posicionar proyectos con potencial de concretarse y circular exitosamente en el mercado europeo. Junto a Maxi y el Agente de Ventas, busca validar la eficacia del sistema a través de casos concretos de éxito que demuestren el valor de la metodología.</p>
+                        <p class="text-sm text-left text-gray-200">Yadira lidera el brazo europeo de Producción Ejecutiva, aportando una trayectoria con 35 proyectos y premios a nivel internacional. Es la base operativa en España y cuenta con su propia productora, lo que le permite una visión integral de la viabilidad de los proyectos. En constante coordinación con Maxi, su enfoque es atraer perfiles relevantes del mercado español y europeo e integrarlos al ecosistema interno. Su visión productiva se centra en conformar equipos sólidos, impulsar desarrollos que superen el exigente Filtro Q y posicionar proyectos con potencial de concretarse y circular exitosamente en el mercado europeo. Junto a Maxi y SALUA, busca validar la eficacia del sistema a través de casos concretos de éxito que demuestren el valor de la metodología.</p>
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
-                <div id="card-agente-ventas" class="card">
-                    <h4 class="text-lg font-bold text-gray-200">Agente de Ventas</h4>
-                    <p class="text-sm role-title">Contacto con Markets y Plataformas</p>
+                <div id="card-salua" class="card">
+                    <h4 class="text-lg font-bold text-gray-200">SALUA</h4>
+                    <p class="text-sm role-title">Representante Guionistas, Venta y Pitch a Plataformas</p>
                     <div class="card-description-wrapper">
-                        <p class="text-sm text-left text-gray-200">El Agente de Ventas (que podría ser Saura o María) es el puente fundamental entre el equipo y los grandes mercados del audiovisual. Su función principal es mantener un feedback constante con plataformas, distribuidores y festivales. Con una vasta experiencia en ferias, eventos y mercados internacionales, esta persona detecta oportunidades estratégicas, abre puertas clave y propone los tipos de contenido con mayor potencial comercial. Además, se vincula con Maxi y Yadira para impulsar la venta de proyectos desarrollados internamente y colabora con Luciano para priorizar las propuestas según la estrategia general de la organización.</p>
+                        <p class="text-sm text-left text-gray-200">SALUA es el puente fundamental entre el equipo y los grandes mercados del audiovisual. Su función principal es mantener un feedback constante con plataformas, distribuidores y festivales. Con una vasta experiencia en ferias, eventos y mercados internacionales, esta persona detecta oportunidades estratégicas, abre puertas clave y propone los tipos de contenido con mayor potencial comercial. Además, se vincula con Maxi y Yadira para impulsar la venta de proyectos desarrollados internamente y colabora con Luciano para priorizar las propuestas según la estrategia general de la organización.</p>
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
@@ -561,6 +582,9 @@
 
             <!-- Bitácora y Redes Section -->
             <div id="section-bitacora-redes" class="section-block section-bitacora">
+                <div class="section-icon">
+                    <i data-lucide="book"></i>
+                </div>
                 <h3 class="section-title">Bitácora y Redes</h3>
                 <div id="card-agustina" class="card">
                     <h4 class="text-lg font-bold text-gray-200">Agustina Rozen</h4>
@@ -590,6 +614,9 @@
 
             <!-- Producto Q Testeo Section -->
             <div id="section-producto-testeo" class="section-block section-producto">
+                <div class="section-icon">
+                    <i data-lucide="check-circle"></i>
+                </div>
                 <h3 class="section-title">Producto Q Testeo</h3>
                 <div id="card-daniel" class="card">
                     <h4 class="text-lg font-bold text-gray-200">Daniel Ballesteros</h4>
@@ -617,68 +644,68 @@
                     <tbody>
                         <tr>
                             <td>Luciano</td>
-                            <td>$ 8.000</td>
-                            <td>$ 96.000</td>
+                            <td class="animated-counter" data-target="8000"></td>
+                            <td class="animated-counter" data-target="96000"></td>
                         </tr>
                         <tr>
                             <td>Yadira</td>
-                            <td>$ 2.500</td>
-                            <td>$ 30.000</td>
+                            <td class="animated-counter" data-target="2500"></td>
+                            <td class="animated-counter" data-target="30000"></td>
                         </tr>
                         <tr>
                             <td>Maxi</td>
-                            <td>$ 2.800</td>
-                            <td>$ 33.600</td>
+                            <td class="animated-counter" data-target="2800"></td>
+                            <td class="animated-counter" data-target="33600"></td>
                         </tr>
                         <tr>
                             <td>Ayudante Maxi</td>
-                            <td>$ 1.500</td>
-                            <td>$ 18.000</td>
+                            <td class="animated-counter" data-target="1500"></td>
+                            <td class="animated-counter" data-target="18000"></td>
                         </tr>
                         <tr>
                             <td>Agustina</td>
-                            <td>$ 3.000</td>
-                            <td>$ 36.000</td>
+                            <td class="animated-counter" data-target="3000"></td>
+                            <td class="animated-counter" data-target="36000"></td>
                         </tr>
                         <tr>
                             <td>Daniel</td>
-                            <td>$ 3.500</td>
-                            <td>$ 42.000</td>
+                            <td class="animated-counter" data-target="3500"></td>
+                            <td class="animated-counter" data-target="42000"></td>
                         </tr>
                         <tr>
                             <td>Paola</td>
-                            <td>$ 1.700</td>
-                            <td>$ 20.400</td>
+                            <td class="animated-counter" data-target="1700"></td>
+                            <td class="animated-counter" data-target="20400"></td>
                         </tr>
                         <tr>
-                            <td>Agente de Ventas</td>
-                            <td>$ 2.500</td>
-                            <td>$ 30.000</td>
+                            <td>SALUA</td>
+                            <td class="animated-counter" data-target="2500"></td>
+                            <td class="animated-counter" data-target="30000"></td>
                         </tr>
                         <tr>
                             <td>Nico</td>
-                            <td>$ 1.500</td>
-                            <td>$ 18.000</td>
+                            <td class="animated-counter" data-target="1500"></td>
+                            <td class="animated-counter" data-target="18000"></td>
                         </tr>
                         <tr>
                             <td>Extras</td>
-                            <td>$ 2.083</td>
-                            <td>$ 25.000</td>
+                            <td class="animated-counter" data-target="2083"></td>
+                            <td class="animated-counter" data-target="25000"></td>
                         </tr>
                         <tr>
                             <td>Oficina Canarias</td>
-                            <td>$ 600</td>
-                            <td>$ 7.200</td>
+                            <td class="animated-counter" data-target="600"></td>
+                            <td class="animated-counter" data-target="7200"></td>
                         </tr>
                         <tr>
                             <td>Oficina Argentina</td>
-                            <td>$ 600</td>
-                            <td>$ 7.200</td>
+                            <td class="animated-counter" data-target="600"></td>
+                            <td class="animated-counter" data-target="7200"></td>
                         </tr>
                         <tr class="total-row">
                             <td>Total</td>
-                            <td>$ 30.283</td>
-                            <td>$ 363.400</td>
+                            <td class="animated-counter" data-target="30283"></td>
+                            <td class="animated-counter" data-target="363400"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -854,6 +881,45 @@
                         }
                     }
                 });
+            });
+
+            // --- Number Animation for Budget Table using IntersectionObserver ---
+            const animateCounter = (el) => {
+                // Remove currency symbol and thousands separator before parsing
+                const targetString = el.getAttribute('data-target');
+                if (!targetString) return; // Guard clause for elements without data-target
+
+                const target = parseFloat(targetString.replace(/\$|\./g, '').replace(',', '.'));
+
+                const duration = 1500; // 1.5 seconds
+                const frameDuration = 1000 / 60; // 60fps
+                const totalFrames = Math.round(duration / frameDuration);
+                let frame = 0;
+                
+                const counter = setInterval(() => {
+                    frame++;
+                    const progress = frame / totalFrames;
+                    const current = Math.round(target * progress);
+                    el.innerText = `$ ${current.toLocaleString('es-ES')}`; // Format with Spanish locale and currency symbol
+
+                    if (frame === totalFrames) {
+                        clearInterval(counter);
+                    }
+                }, frameDuration);
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target); // Stop observing after animation
+                    }
+                });
+            }, { threshold: 0.5 }); // Trigger when 50% of the element is visible
+
+            document.querySelectorAll('.animated-counter').forEach(counter => {
+                counter.innerText = '$ 0'; // Initialize to 0 before observing
+                observer.observe(counter);
             });
         });
     </script>
