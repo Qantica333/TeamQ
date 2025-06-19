@@ -151,7 +151,7 @@
         .node-salua { fill: #ec4899; stroke: #be185d; } /* Rose for Salua */
         .node-nico { fill: #84cc16; stroke: #65a30d; } /* Lime */
         .node-daniel { fill: #3b82f6; stroke: #2563eb; } /* Blue */
-        .node-ayudante-maxi { fill: #facc15; stroke: #d97706; } /* Yellow */
+        /* Note: Ayudante Maxi node and associated styles removed as requested */
 
         .node-text {
             font-family: 'Inter', sans-serif;
@@ -167,7 +167,7 @@
         .node-agustina-text { fill: #1a202c; }
         .node-paola-text { fill: #ffffff; } /* White text for dark emerald Paola */
         .node-daniel-text { fill: #ffffff; }
-        .node-maxi-text, .node-yadira-text, .node-nico-text, .node-ayudante-maxi-text, .node-salua-text { fill: #1a202c; }
+        .node-maxi-text, .node-yadira-text, .node-nico-text, .node-salua-text { fill: #1a202c; }
 
 
         .node-subtext {
@@ -183,7 +183,7 @@
         .node-agustina-subtext { fill: #1a202c; }
         .node-paola-subtext { fill: #e2e8f0; } /* text-gray-200 for dark emerald Paola */
         .node-daniel-subtext { fill: #e2e8f0; }
-        .node-maxi-subtext, .node-yadira-subtext, .node-nico-subtext, .node-ayudante-maxi-subtext, .node-salua-subtext { fill: #1a202c; }
+        .node-maxi-subtext, .node-yadira-subtext, .node-nico-subtext, .node-salua-subtext { fill: #1a202c; }
 
 
         .line {
@@ -453,13 +453,6 @@
                     <text x="400" y="265" class="node-subtext node-maxi-subtext">(Prod. Ejecutivo LATAM)</text>
                 </g>
 
-                <!-- Ayudante Maxi (New Node) -->
-                <g class="node-group" data-target="card-maxi-ayudante" data-node-id="ayudante-maxi">
-                    <circle cx="400" cy="420" r="60" class="node-circle node-ayudante-maxi"></circle>
-                    <text x="400" y="410" class="node-text node-ayudante-maxi-text">Ayudante Maxi</text>
-                    <text x="400" y="435" class="node-subtext node-ayudante-maxi-subtext">(Soporte Producción)</text>
-                </g>
-
                 <!-- Yadira -->
                 <g class="node-group" data-target="card-yadira" data-node-id="yadira">
                     <circle cx="600" cy="250" r="60" class="node-circle node-yadira"></circle>
@@ -498,7 +491,7 @@
                 </g>
 
 
-                <!-- Lines/Arrows - Adjusted for new Salua position -->
+                <!-- Lines/Arrows - Adjusted for new Salua position and removed Ayudante Maxi -->
                 <!-- Luciano to Agustina -->
                 <line x1="500" y1="140" x2="200" y2="190" class="line" data-from="luciano" data-to="agustina"></line>
                 <!-- Luciano to Maxi -->
@@ -508,24 +501,19 @@
                 <!-- Luciano to Daniel -->
                 <line x1="500" y1="140" x2="800" y2="190" class="line" data-from="luciano" data-to="daniel"></line>
 
-                <!-- Agustina to Paola (formerly Renata) -->
+                <!-- Agustina to Paola -->
                 <line x1="200" y1="310" x2="200" y2="360" class="line" data-from="agustina" data-to="paola"></line>
 
-                <!-- Maxi to Ayudante Maxi (New Line) -->
-                <line x1="400" y1="310" x2="400" y2="360" class="line" data-from="maxi" data-to="ayudante-maxi"></line>
-
-                <!-- Maxi to Salua - adjusted to new position -->
+                <!-- Maxi to Salua -->
                 <line x1="400" y1="310" x2="700" y2="530" class="line" data-from="maxi" data-to="salua"></line>
-                <!-- Yadira to Salua - adjusted to new position -->
+                <!-- Yadira to Salua -->
                 <line x1="600" y1="310" x2="700" y2="530" class="line" data-from="yadira" data-to="salua"></line>
 
-                <!-- Paola to Nico (formerly Renata to Nico) -->
+                <!-- Paola to Nico -->
                 <line x1="200" y1="480" x2="200" y2="530" class="line" data-from="paola" data-to="nico"></line>
 
             </svg>
         </div>
-
-        <!-- The removed phrase was here -->
 
         <!-- Detailed Card Sections - New Layout -->
         <div class="main-sections-grid">
@@ -559,14 +547,7 @@
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
-                <div id="card-maxi-ayudante" class="card">
-                    <h4 class="text-lg font-bold text-gray-200">Ayudante Maxi</h4>
-                    <p class="text-sm role-title">Soporte Producción Ejecutiva</p>
-                    <div class="card-description-wrapper">
-                        <p class="text-sm text-left text-gray-200">El Ayudante de Maxi ofrece soporte continuo al área de Producción Ejecutiva, colaborando en la gestión diaria, la coordinación de tareas y el seguimiento de proyectos en desarrollo. Su rol es crucial para mantener la eficiencia operativa y liberar tiempo para que Maxi se enfoque en las decisiones estratégicas y las relaciones clave.</p>
-                    </div>
-                    <button class="read-more-btn">Leer más</button>
-                </div>
+                <!-- Ayudante Maxi card removed as requested -->
                 <div id="card-yadira" class="card">
                     <h4 class="text-lg font-bold text-gray-200">Yadira Ávalos</h4>
                     <p class="text-sm role-title">Productora Ejecutiva España</p>
@@ -659,13 +640,8 @@
                         </tr>
                         <tr>
                             <td>Maxi</td>
-                            <td class="animated-counter" data-target="3500"></td>
-                            <td class="animated-counter" data-target="42000"></td>
-                        </tr>
-                        <tr>
-                            <td>Ayudante Maxi</td>
-                            <td class="animated-counter" data-target="1500"></td>
-                            <td class="animated-counter" data-target="18000"></td>
+                            <td class="animated-counter" data-target="2500"></td>
+                            <td class="animated-counter" data-target="30000"></td>
                         </tr>
                         <tr>
                             <td>Agustina</td>
@@ -702,15 +678,10 @@
                             <td class="animated-counter" data-target="600"></td>
                             <td class="animated-counter" data-target="7200"></td>
                         </tr>
-                        <tr>
-                            <td>Oficina Argentina</td>
-                            <td class="animated-counter" data-target="600"></td>
-                            <td class="animated-counter" data-target="7200"></td>
-                        </tr>
                         <tr class="total-row">
                             <td>Total</td>
-                            <td class="animated-counter" data-target="30983"></td>
-                            <td class="animated-counter" data-target="371800"></td>
+                            <td class="animated-counter" data-target="27883"></td>
+                            <td class="animated-counter" data-target="334600"></td>
                         </tr>
                     </tbody>
                 </table>
