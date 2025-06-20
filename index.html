@@ -582,7 +582,7 @@
                     <h4 class="text-lg font-bold text-gray-200">Paola</h4>
                     <p class="text-sm role-title">Bitácora - Redes</p>
                     <div class="card-description-wrapper">
-                        <p class="text-sm text-left text-gray-200">Paola complementa la labor de Agustina en la Bitácora, colaborando en la observación, registro y sistematización del proceso creativo de cada guionista. Su enfoque principal radica en cómo ese contenido puede transformarse en piezas comunicacionales impactantes para redes sociales. Trabaja en estrecha colaboración con Nico en la definición de materiales a publicar, la narrativa interna del equipo y la imagen que se proyecta al exterior. Además, Paola participa activamente en el desarrollo de estrategias de marketing digital, ideando junto a Agustina y Nico nuevas formas innovadoras de posicionar a los guionistas y el distintivo método de trabajo del equipo.</p>
+                        <p class="text-sm text-left text-gray-200">Paola complementa la labor de Agustina en la Bitácora, colaborando en la observación, registro y sistematización del proceso creativo de cada guionista. Su enfoque principal radica en cómo ese contenido puede transformarse en piezas comunicacionalesंपactantes para redes sociales. Trabaja en estrecha colaboración con Nico en la definición de materiales a publicar, la narrativa interna del equipo y la imagen que se proyecta al exterior. Además, Paola participa activamente en el desarrollo de estrategias de marketing digital, ideando junto a Agustina y Nico nuevas formas innovadoras de posicionar a los guionistas y el distintivo método de trabajo del equipo.</p>
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
@@ -622,14 +622,14 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Presupuesto Mensual</th>
-                            <th>Presupuesto Anual</th>
+                            <th>Presupuesto Anual (9 Meses)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Luciano</td>
                             <td class="animated-counter" data-target="8000"></td>
-                            <td class="animated-counter" data-target="96000"></td>
+                            <td class="animated-counter" data-target="72000"></td>
                         </tr>
                         <tr>
                             <td>Maxi</td>
@@ -644,42 +644,42 @@
                         <tr>
                             <td>Agustina</td>
                             <td class="animated-counter" data-target="1800"></td>
-                            <td class="animated-counter" data-target="21600"></td>
+                            <td class="animated-counter" data-target="16200"></td>
                         </tr>
                         <tr>
                             <td>Daniel</td>
                             <td class="animated-counter" data-target="3500"></td>
-                            <td class="animated-counter" data-target="42000"></td>
+                            <td class="animated-counter" data-target="31500"></td>
                         </tr>
                         <tr>
                             <td>Paola</td>
                             <td class="animated-counter" data-target="1700"></td>
-                            <td class="animated-counter" data-target="20400"></td>
+                            <td class="animated-counter" data-target="15300"></td>
                         </tr>
                         <tr>
                             <td>Salua</td>
                             <td class="animated-counter" data-target="2500"></td>
-                            <td class="animated-counter" data-target="30000"></td>
+                            <td class="animated-counter" data-target="22500"></td>
                         </tr>
                         <tr>
                             <td>Nico</td>
                             <td class="animated-counter" data-target="1500"></td>
-                            <td class="animated-counter" data-target="18000"></td>
+                            <td class="animated-counter" data-target="13500"></td>
                         </tr>
                         <tr>
                             <td>Extras</td>
                             <td class="animated-counter" data-target="2083"></td>
-                            <td class="animated-counter" data-target="25000"></td>
+                            <td class="animated-counter" data-target="18750"></td>
                         </tr>
                         <tr>
                             <td>Oficina Canarias</td>
                             <td class="animated-counter" data-target="550"></td>
-                            <td class="animated-counter" data-target="6600"></td>
+                            <td class="animated-counter" data-target="4950"></td>
                         </tr>
                         <tr class="total-row">
                             <td>Total</td>
                             <td class="animated-counter" data-target="21633"></td>
-                            <td class="animated-counter" data-target="299600"></td>
+                            <td class="animated-counter" data-target="234700"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -850,7 +850,7 @@
                             const cardSubtitleElement = targetCard.querySelector('.luciano-role-title') || targetCard.querySelector('.role-title');
                             const subtitle = cardSubtitleElement ? cardSubtitleElement.textContent : 'Rol Desconocido';
                             
-                            const fullDescription = targetCard.querySelector('.card-description-wrapper p').textContent;
+                            const fullDescription = descriptionTextElement.textContent;
                             openModal(title, subtitle, fullDescription);
                         }
                     }
@@ -899,3 +899,4 @@
     </script>
 </body>
 </html>
+
