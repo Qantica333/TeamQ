@@ -117,9 +117,9 @@
             border-bottom: 1px solid #4a5568; /* Darker border */
         }
         .budget-table th {
-            background-color: #4a5568; /* bg-gray-600 */
+            background-color: #4a5568;
             font-weight: 600;
-            color: #a0aec0; /* text-gray-400 */
+            color: #a0aec0;
         }
         .budget-table tbody tr:last-child td {
             border-bottom: none;
@@ -361,6 +361,12 @@
         .section-producto {
             border-color: #f87171; /* border-red-400 */
         }
+        .section-satelites {
+            border-color: #a78bfa; /* border-purple-400 */
+        }
+        .section-atraccion {
+            border-color: #fbbf24; /* border-amber-400 */
+        }
 
         /* Section Icon Styling */
         .section-icon {
@@ -373,7 +379,36 @@
         .section-produccion .section-icon svg { color: #60a5fa; }
         .section-bitacora .section-icon svg { color: #4ade80; }
         .section-producto .section-icon svg { color: #f87171; }
+        .section-satelites .section-icon svg { color: #a78bfa; }
+        .section-atraccion .section-icon svg { color: #fbbf24; }
 
+        /* Guionistas table styling */
+        .guionistas-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            text-align: left;
+            color: #cbd5e0;
+            background-color: #2d3748; /* Same as other cards/sections */
+            border-radius: 0.75rem;
+            overflow: hidden; /* Ensures rounded corners for content inside */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .guionistas-table th, .guionistas-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #4a5568;
+        }
+
+        .guionistas-table th {
+            background-color: #4a5568;
+            font-weight: 600;
+            color: #a0aec0;
+        }
+
+        .guionistas-table tbody tr:last-child td {
+            border-bottom: none;
+        }
 
         /* Responsive adjustments for SVG */
         @media (max-width: 767px) {
@@ -542,7 +577,7 @@
                     <h4 class="text-lg font-bold text-gray-200">Maxi Dubois</h4>
                     <p class="text-sm role-title">Productor Ejecutivo LATAM</p>
                     <div class="card-description-wrapper">
-                        <p class="text-sm text-left text-gray-200">Con una sólida trayectoria de más de 40 películas, Maxi lidera la producción ejecutiva en América Latina. Su rol es articular la pata productora desde la región, en coordinación directa con Yadira en Europa. Se encarga de vincular al equipo con guionistas estratégicos, alimentar el pipeline de proyectos y acercarlos al área de Perfiles. Maxi también trabaja estrechamente con Salua, quien es la conexión clave entre Maxi y Yadira, para validar el potencial comercial de los guiones y con Luciano para ajustar las prioridades productivas según los intereses del mercado.</p>
+                        <p class="text-sm text-white text-left">Con una sólida trayectoria de más de 40 películas, Maxi lidera la producción ejecutiva en América Latina. Su rol es articular la pata productora desde la región, en coordinación directa con Yadira en Europa. Se encarga de vincular al equipo con guionistas estratégicos, alimentar el pipeline de proyectos y acercarlos al área de Perfiles. Maxi también trabaja estrechamente con Salua, quien es la conexión clave entre Maxi y Yadira, para validar el potencial comercial de los guiones y con Luciano para ajustar las prioridades productivas según los intereses del mercado.</p>
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
@@ -550,7 +585,7 @@
                     <h4 class="text-lg font-bold text-gray-200">Yadira Ávalos</h4>
                     <p class="text-sm role-title">Productora Ejecutiva España</p>
                     <div class="card-description-wrapper">
-                        <p class="text-sm text-left text-gray-200">Yadira lidera el brazo europeo de Producción Ejecutiva, aportando una trayectoria con 35 proyectos y premios a nivel internacional. Es la base operativa en España y cuenta con su propia productora, lo que le permite una visión integral de la viabilidad de los proyectos. En constante coordinación con Maxi, su enfoque es atraer perfiles relevantes del mercado español y europeo e integrarlos al ecosistema interno. Su visión productiva se centra en conformar equipos sólidos, impulsar desarrollos que superen el exigente Filtro Q y posicionar proyectos con potencial de concretarse y circular exitosamente en el mercado europeo. Junto a Maxi y Salua, quien es la conexión clave entre Maxi y Yadira, busca validar la eficacia del sistema a través de casos concretos de éxito que demuestren el valor de la metodología.</p>
+                        <p class="text-sm text-white text-left">Yadira lidera el brazo europeo de Producción Ejecutiva, aportando una trayectoria con 35 proyectos y premios a nivel internacional. Es la base operativa en España y cuenta con su propia productora, lo que le permite una visión integral de la viabilidad de los proyectos. En constante coordinación con Maxi, su enfoque es atraer perfiles relevantes del mercado español y europeo e integrarlos al ecosistema interno. Su visión productiva se centra en conformar equipos sólidos, impulsar desarrollos que superen el exigente Filtro Q y posicionar proyectos con potencial de concretarse y circular exitosamente en el mercado europeo. Junto a Maxi y Salua, quien es la conexión clave entre Maxi y Yadira, busca validar la eficacia del sistema a través de casos concretos de éxito que demuestren el valor de la metodología.</p>
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
@@ -558,7 +593,7 @@
                     <h4 class="text-lg font-bold text-gray-200">Salua</h4>
                     <p class="text-sm role-title">Representante Guionistas, Venta y Pitch a Plataformas</p>
                     <div class="card-description-wrapper">
-                        <p class="text-sm text-left text-gray-200">Salua es el puente fundamental entre el equipo y los grandes mercados del audiovisual. Su función principal es mantener un feedback constante con plataformas, distribuidores y festivales. Con una vasta experiencia en ferias, eventos y mercados internacionales, esta persona detecta oportunidades estratégicas, abre puertas clave y propone los tipos de contenido con mayor potencial comercial. Además, se vincula con Maxi y Yadira para impulsar la venta de proyectos desarrollados internamente y colabora con Luciano para priorizar las propuestas según la estrategia general de la organización. Su vinculación presupuestaria comienza a partir del mes 3.</p>
+                        <p class="text-sm text-white text-left">Salua es el puente fundamental entre el equipo y los grandes mercados del audiovisual. Su función principal es mantener un feedback constante con plataformas, distribuidores y festivales. Con una vasta experiencia en ferias, eventos y mercados internacionales, esta persona detecta oportunidades estratégicas, abre puertas clave y propone los tipos de contenido con mayor potencial comercial. Además, se vincula con Maxi y Yadira para impulsar la venta de proyectos desarrollados internamente y colabora con Luciano para priorizar las propuestas según la estrategia general de la organización. Su vinculación presupuestaria comienza a partir del mes 3.</p>
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
@@ -574,7 +609,7 @@
                     <h4 class="text-lg font-bold text-gray-200">Agustina Rozen</h4>
                     <p class="text-sm role-title">Bitácora y Perfil</p>
                     <div class="card-description-wrapper">
-                        <p class="text-sm text-left text-gray-200">Agustina lidera dos áreas fundamentales: Perfiles y Bitácora. En Perfiles, se encarga de recibir y clasificar a cada guionista que se incorpora, registrando datos esenciales (tipo de proyecto, géneros, país de origen) para una asignación estratégica según las necesidades del equipo. En Bitácora, profundiza en el elemento creativo del 'making-of', documentando detalladamente el proceso de cada autor y evaluando los perfiles que acceden al sistema por parte de Maxi y Yadira. Mantiene una comunicación constante con Paola para asegurar la fluidez del proceso y la generación de contenido valioso para redes y comunicación.</p>
+                        <p class="text-sm text-white text-left">Agustina lidera dos áreas fundamentales: Perfiles y Bitácora. En Perfiles, se encarga de recibir y clasificar a cada guionista que se incorpora, registrando datos esenciales (tipo de proyecto, géneros, país de origen) para una asignación estratégica según las necesidades del equipo. En Bitácora, profundiza en el elemento creativo del 'making-of', documentando detalladamente el proceso de cada autor y evaluando los perfiles que acceden al sistema por parte de Maxi y Yadira. Mantiene una comunicación constante con Paola para asegurar la fluidez del proceso y la generación de contenido valioso para redes y comunicación.</p>
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
@@ -590,7 +625,7 @@
                     <h4 class="text-lg font-bold text-gray-200">Nico Borello</h4>
                     <p class="text-sm role-title">Community Manager</p>
                     <div class="card-description-wrapper">
-                        <p class="text-sm text-left text-gray-200">Nico es el responsable de la gestión integral y el desarrollo estratégico de las redes sociales. Su función no se limita a la publicación de contenido; también edita videos de alta calidad, crea narrativas potentes y construye una identidad visual coherente para cada historia. Su tarea trasciende la mera difusión, dialogando activamente con Agustina y Paola para definir qué materiales se subirán y cómo se presentarán, transformando el contenido de Bitácora en piezas altamente atractivas para la audiencia. Asimismo, colabora en el diseño de estrategias de marketing, planificando junto a sus compañeras las líneas comunicacionales clave y aprovechando el proceso de cada guionista como una oportunidad estratégica de posicionamiento.</p>
+                        <p class="text-sm text-white text-left">Nico es el responsable de la gestión integral y el desarrollo estratégico de las redes sociales. Su función no se limita a la publicación de contenido; también edita videos de alta calidad, crea narrativas potentes y construye una identidad visual coherente para cada historia. Su tarea trasciende la mera difusión, dialogando activamente con Agustina y Paola para definir qué materiales se subirán y cómo se presentarán, transformando el contenido de Bitácora en piezas altamente atractivas para la audiencia. Asimismo, colabora en el diseño de estrategias de marketing, planificando junto a sus compañeras las líneas comunicacionales clave y aprovechando el proceso de cada guionista como una oportunidad estratégica de posicionamiento.</p>
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
@@ -611,6 +646,88 @@
                     <button class="read-more-btn">Leer más</button>
                 </div>
             </div>
+
+            <!-- New Section: Participación de Satélites en el Proceso Creativo -->
+            <div id="section-satelites" class="section-block section-satelites">
+                <div class="section-icon">
+                    <i data-lucide="satellite-dish"></i>
+                </div>
+                <h3 class="section-title">Participación de Satélites en el Proceso Creativo</h3>
+                <div class="card">
+                    <div class="card-description-wrapper">
+                        <p class="text-sm text-white text-left">Los Satélites: productores, directores, agentes de venta y actores ingresan desde las primeras etapas del desarrollo de guión dentro del EDÉN. Su rol es acompañar el proceso con una mirada estratégica sin interferir directamente, actuando como observadores activos y guías. Su presencia permite detectar fortalezas, anticipar oportunidades y cuidar el enfoque creativo del Creador Este acompañamiento genera un ecosistema en el que los creadores se sienten respaldados, fortaleciendo la calidad del contenido desde el inicio. Los Satélites funcionan como una red de contención que amplifica la potencia de cada IP, sumando valor artístico, comercial y estructural antes de su salida al mercado.</p>
+                    </div>
+                    <button class="read-more-btn">Leer más</button>
+                </div>
+            </div>
+
+            <!-- New Section: Atracción de Guionistas a Qantica -->
+            <div id="section-atraccion" class="section-block section-atraccion">
+                <div class="section-icon">
+                    <i data-lucide="users-round"></i>
+                </div>
+                <h3 class="section-title">Atracción de Guionistas a Qantica</h3>
+                <div class="card">
+                    <div class="card-description-wrapper">
+                        <p class="text-sm text-white text-left">Qantica inicia su camino con la incorporación de creadores seleccionados a través de tres ejes clave. Salua, representante del sector, integra a su red de más de 40 guionistas como los primeros usuarios activos, otorgándoles acceso temprano a la plataforma. Estos guionistas podrán presentar proyectos para el Ciclo 1, recibir recompensas iniciales y acceder a futuros tokens cuando se lance el ecosistema completo. Por su parte, Maxi Dubois se encarga de articular con talento en América Latina, mientras que Yadira Ávalos hace lo propio desde Europa. Este triángulo de entrada garantiza diversidad cultural, solidez profesional y un flujo constante de contenido desde el primer día de activación, estableciendo las bases de una plataforma internacional y escalable.</p>
+                    </div>
+                    <button class="read-more-btn">Leer más</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guionistas Invitados Section -->
+        <div class="w-full max-w-3xl mt-12 bg-gray-800 rounded-lg p-6 shadow-md border border-teal-400">
+            <h2 class="text-2xl font-bold text-center mb-6 text-teal-400">Guionistas Invitados a la Plataforma para Testear la Tecnología</h2>
+            <h3 class="text-xl font-semibold text-center mb-4 text-gray-300">Resumen estratégico por creador</h3>
+            <div class="overflow-x-auto">
+                <table class="guionistas-table">
+                    <thead>
+                        <tr>
+                            <th>Creador</th>
+                            <th>Trabajo destacado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Martín Neuberger</td>
+                            <td>(Perfil profesional en desarrollo; se puede completar con una obra específica cuando esté disponible)</td>
+                        </tr>
+                        <tr>
+                            <td>Martín Romanella</td>
+                            <td>Spinner (2017) – guión ganador en Sundance 2018, además de otros proyectos como Malambo (2020) y Frost Fair (2019)</td>
+                        </tr>
+                        <tr>
+                            <td>Rodrigo Grande</td>
+                            <td>Al final del túnel (2016) – thriller dirigido y escrito por él, con alcance internacional.</td>
+                        </tr>
+                        <tr>
+                            <td>Mariano Llinás</td>
+                            <td>Co-guionista de Argentina, 1985 (2022), nominada al Óscar a Mejor Película Internacional; también por La Flor.</td>
+                        </tr>
+                        <tr>
+                            <td>Diego Vivanco</td>
+                            <td>Libretista de Francisco, el matemático (735 episodios) y coguionista de El páramo (premiado en Guadalajara 2012).</td>
+                        </tr>
+                        <tr>
+                            <td>Gabriel Macías</td>
+                            <td>Guionista de El Marginal 4 y Señales del fin del mundo.</td>
+                        </tr>
+                        <tr>
+                            <td>Natalia Torres</td>
+                            <td>Guionista de En el barro (Netflix), El Marginal y El Recluso.</td>
+                        </tr>
+                        <tr>
+                            <td>Claudia Piñeiro</td>
+                            <td>Autora de Las viudas de los jueves (Premio Clarín 2005), adaptada a cine/TV, y creadora de El Reino (Netflix).</td>
+                        </tr>
+                        <tr>
+                            <td>Mariano Samengo</td>
+                            <td>Cortometrajes El Duelo (2014), Pirucha (2015); coguionista de largometraje Panash.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!-- Budget Section -->
@@ -622,14 +739,14 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Presupuesto Mensual</th>
-                            <th>Presupuesto Anual (9 Meses)</th>
+                            <th>Presupuesto Anual (12 Meses)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Luciano</td>
                             <td class="animated-counter" data-target="8000"></td>
-                            <td class="animated-counter" data-target="72000"></td>
+                            <td class="animated-counter" data-target="96000"></td>
                         </tr>
                         <tr>
                             <td>Maxi</td>
@@ -644,42 +761,42 @@
                         <tr>
                             <td>Agustina</td>
                             <td class="animated-counter" data-target="1800"></td>
-                            <td class="animated-counter" data-target="16200"></td>
+                            <td class="animated-counter" data-target="21600"></td>
                         </tr>
                         <tr>
                             <td>Daniel</td>
                             <td class="animated-counter" data-target="3500"></td>
-                            <td class="animated-counter" data-target="31500"></td>
+                            <td class="animated-counter" data-target="42000"></td>
                         </tr>
                         <tr>
                             <td>Paola</td>
                             <td class="animated-counter" data-target="1700"></td>
-                            <td class="animated-counter" data-target="15300"></td>
+                            <td class="animated-counter" data-target="20400"></td>
                         </tr>
                         <tr>
                             <td>Salua</td>
-                            <td class="animated-counter" data-target="2500"></td>
-                            <td class="animated-counter" data-target="22500"></td>
+                            <td class="animated-counter" data-target="0"></td>
+                            <td class="animated-counter" data-target="20000"></td>
                         </tr>
                         <tr>
                             <td>Nico</td>
                             <td class="animated-counter" data-target="1500"></td>
-                            <td class="animated-counter" data-target="13500"></td>
+                            <td class="animated-counter" data-target="18000"></td>
                         </tr>
                         <tr>
                             <td>Extras</td>
                             <td class="animated-counter" data-target="2083"></td>
-                            <td class="animated-counter" data-target="18750"></td>
+                            <td class="animated-counter" data-target="24996"></td>
                         </tr>
                         <tr>
                             <td>Oficina Canarias</td>
                             <td class="animated-counter" data-target="550"></td>
-                            <td class="animated-counter" data-target="4950"></td>
+                            <td class="animated-counter" data-target="6600"></td>
                         </tr>
                         <tr class="total-row">
                             <td>Total</td>
                             <td class="animated-counter" data-target="21633"></td>
-                            <td class="animated-counter" data-target="234700"></td>
+                            <td class="animated-counter" data-target="289596"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -899,4 +1016,3 @@
     </script>
 </body>
 </html>
-
