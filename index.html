@@ -653,9 +653,9 @@
                     <i data-lucide="satellite-dish"></i>
                 </div>
                 <h3 class="section-title">Participación de Satélites en el Proceso Creativo</h3>
-                <div class="card">
+                <div id="card-satelites-description" class="card"> <!-- Added ID here for targeting -->
                     <div class="card-description-wrapper">
-                        <p class="text-sm text-white text-left">Los Satélites: productores, directores, agentes de venta y actores ingresan desde las primeras etapas del desarrollo de guión dentro del EDÉN. Su rol es acompañar el proceso con una mirada estratégica sin interferir directamente, actuando como observadores activos y guías. Su presencia permite detectar fortalezas, anticipar oportunidades y cuidar el enfoque creativo del Creador Este acompañamiento genera un ecosistema en el que los creadores se sienten respaldados, fortaleciendo la calidad del contenido desde el inicio. Los Satélites funcionan como una red de contención que amplifica la potencia de cada IP, sumando valor artístico, comercial y estructural antes de su salida al mercado.</p>
+                        <p class="text-sm text-white text-left">Los Satélites —productores, directores, agentes de venta y actores— ingresan desde las primeras etapas del desarrollo de guión en EDEN, la plataforma creativa de Qantica. Su rol es acompañar el proceso con una mirada estratégica sin interferir directamente, actuando como observadores activos y guías. Su presencia permite detectar fortalezas, anticipar oportunidades de producción y cuidar el enfoque creativo del guionista. Este acompañamiento genera un ecosistema en el que los creadores se sienten respaldados, fortaleciendo la calidad del contenido desde el inicio. Los Satélites funcionan como una red de contención que amplifica la potencia de cada IP, sumando valor artístico, comercial y estructural antes de su salida al mercado.</p>
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
@@ -667,9 +667,9 @@
                     <i data-lucide="users-round"></i>
                 </div>
                 <h3 class="section-title">Atracción de Guionistas a Qantica</h3>
-                <div class="card">
+                <div id="card-atraccion-description" class="card"> <!-- Added ID here for targeting -->
                     <div class="card-description-wrapper">
-                        <p class="text-sm text-white text-left">Qantica inicia su camino con la incorporación de creadores seleccionados a través de tres ejes clave. Salua, representante del sector, integra a su red de más de 40 guionistas como los primeros usuarios activos, otorgándoles acceso temprano a la plataforma. Estos guionistas podrán presentar proyectos para el Ciclo 1, recibir recompensas iniciales y acceder a futuros tokens cuando se lance el ecosistema completo. Por su parte, Maxi Dubois se encarga de articular con talento en América Latina, mientras que Yadira Ávalos hace lo propio desde Europa. Este triángulo de entrada garantiza diversidad cultural, solidez profesional y un flujo constante de contenido desde el primer día de activación, estableciendo las bases de una plataforma internacional y escalable.</p>
+                        <p class="text-sm text-white text-left">La plataforma Qantica inicia su camino con la incorporación de guionistas seleccionados a través de tres ejes clave. Salua, representante del sector, integra a su red de guionistas como los primeros usuarios activos, otorgándoles acceso temprano a la plataforma. Estos guionistas podrán presentar proyectos para el Ciclo 1, recibir recompensas iniciales y acceder a futuros tokens cuando se lance el ecosistema completo. Por su parte, Maxi Dubois se encarga de articular con talento guionista en América Latina, mientras que Yadira Ávalos hace lo propio desde Europa. Este triángulo de entrada garantiza diversidad cultural, solidez profesional y un flujo constante de contenido desde el primer día de activación, estableciendo las bases de una plataforma internacional y escalable.</p>
                     </div>
                     <button class="read-more-btn">Leer más</button>
                 </div>
@@ -890,13 +890,29 @@
                 }
 
                 readMoreBtn.addEventListener('click', () => {
-                    // Robust way to get title (h2 for Luciano, h4 for others)
-                    const cardTitleElement = card.querySelector('h2') || card.querySelector('h4');
-                    const title = cardTitleElement ? cardTitleElement.textContent : 'Título Desconocido';
+                    let title = 'Título Desconocido'; // Default value
+                    let subtitle = ''; // Default to empty or a generic phrase
 
-                    // Robust way to get subtitle (luciano-role-title or role-title)
-                    const cardSubtitleElement = card.querySelector('.luciano-role-title') || card.querySelector('.role-title');
-                    const subtitle = cardSubtitleElement ? cardSubtitleElement.textContent : 'Rol Desconocido';
+                    // Attempt to find a specific title/subtitle within the clicked card (for individual roles)
+                    const specificTitleElement = card.querySelector('h2') || card.querySelector('h4');
+                    if (specificTitleElement) {
+                        title = specificTitleElement.textContent;
+                        const specificSubtitleElement = card.querySelector('.luciano-role-title') || card.querySelector('.role-title');
+                        if (specificSubtitleElement) {
+                            subtitle = specificSubtitleElement.textContent;
+                        }
+                    } else {
+                        // If no specific title/subtitle in card, look for the section title (for descriptive cards)
+                        const parentSectionBlock = card.closest('.section-block');
+                        if (parentSectionBlock) {
+                            const sectionTitleElement = parentSectionBlock.querySelector('.section-title'); // This is the h3
+                            if (sectionTitleElement) {
+                                title = sectionTitleElement.textContent;
+                                // For these descriptive sections, provide a generic subtitle
+                                subtitle = 'Información General';
+                            }
+                        }
+                    }
                             
                     const fullDescription = descriptionTextElement.textContent;
                     openModal(title, subtitle, fullDescription);
@@ -961,14 +977,34 @@
                             }, 1000);
 
                             // Open modal with full text
-                            const cardTitleElement = targetCard.querySelector('h2') || targetCard.querySelector('h4');
-                            const title = cardTitleElement ? cardTitleElement.textContent : 'Título Desconocido';
+                            let title = 'Título Desconocido';
+                            let subtitle = '';
 
-                            const cardSubtitleElement = targetCard.querySelector('.luciano-role-title') || targetCard.querySelector('.role-title');
-                            const subtitle = cardSubtitleElement ? cardSubtitleElement.textContent : 'Rol Desconocido';
+                            const specificTitleElement = targetCard.querySelector('h2') || targetCard.querySelector('h4');
+                            if (specificTitleElement) {
+                                title = specificTitleElement.textContent;
+                                const specificSubtitleElement = targetCard.querySelector('.luciano-role-title') || targetCard.querySelector('.role-title');
+                                if (specificSubtitleElement) {
+                                    subtitle = specificSubtitleElement.textContent;
+                                }
+                            } else {
+                                const parentSectionBlock = targetCard.closest('.section-block');
+                                if (parentSectionBlock) {
+                                    const sectionTitleElement = parentSectionBlock.querySelector('.section-title');
+                                    if (sectionTitleElement) {
+                                        title = sectionTitleElement.textContent;
+                                        subtitle = 'Información General';
+                                    }
+                                }
+                            }
                             
-                            const fullDescription = descriptionTextElement.textContent;
-                            openModal(title, subtitle, fullDescription);
+                            const fullDescription = descriptionTextElement.textContent; // This variable is not defined here.
+                            // Need to correctly get the description from the clicked card.
+                            const cardDescriptionElement = targetCard.querySelector('.card-description-wrapper p');
+                            const fullDescriptionFromCard = cardDescriptionElement ? cardDescriptionElement.textContent : 'Descripción no disponible.';
+
+
+                            openModal(title, subtitle, fullDescriptionFromCard);
                         }
                     }
                 });
